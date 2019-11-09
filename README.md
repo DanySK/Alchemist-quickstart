@@ -54,7 +54,7 @@ The CLI supports the following options
 
 | Option                                     | Effect                                                       |
 |--------------------------------------------|--------------------------------------------------------------|
-| -b,--batch                                 | Runs in batch mode. If one or more -var parameters are<br>specified, multiple simulation runs will be executed in<br>parallel with all the combinations of values.                |
+| -b,--batch                                 | Runs in batch mode. If one or more -var parameters are specified, multiple simulation runs will be executed in parallel with all the combinations of values.                |
 | -bmk,--benchmark <file>                    | Performs a benchmark with the provided simulation,<br>measuring the total execution time. Saves result in<br>given file.                                                  |
 | -cc,--comment-char                         | Sets the char that will be used to mark a data file line<br>as commented. Defaults to #. (To be implemented)             |
 | -d,--distributed <file>                    | Distribute simulations in computer grid                      |
