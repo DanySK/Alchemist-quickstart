@@ -18,7 +18,7 @@ On Windows:
 ```
 gradlew.bat runAlchemist
 ```
-Press P and you will see some pedestrians wandering around. For further information about the gui, see the [graphical interface shortcuts](#graphical-interface-shortcuts).
+Press P and you will see some pedestrians wandering around. For further information about the gui, see the [graphical interface shortcuts](https://alchemistsimulator.github.io/wiki/usage/gui/).
 
 ## The build script
 
@@ -75,24 +75,3 @@ The CLI supports the following options
 | -vv,--vverbose                             | Very verbose mode: prints debug-level informations. Slows the simulator down. A lot.                                                                                              |
 | -vvv,--vvverbose                           | Very very verbose mode: prints trace-level informations. Slows the simulator down. An awful lot.                                                                                  |
 | -y,--yaml <file>                           | Load the specified Alchemist YAML file                                                                                                                                            |
-
-
-## Graphical interface shortcuts
-
-The Graphical interface supports the following command list
-
-| Key binding | Active          | Effect                                                                |
-| ------------ | -------------- | --------------------------------------------------------------------- |
-| L            | always         | (En/Dis)ables the painting of links between nodes                     |
-| M            | always         | (En/Dis)ables the painting of a marker on the closest node            |
-| Mouse pan    | in normal mode | Moves around                                                          |
-| Mouse wheel  | in normal mode | Zooms in/out                                                          |
-| Double click | in normal mode | Opens a frame with the closest node information                       |
-| Right click  | in normal mode | Enters screen rotation mode                                           |
-| P            | always         | Plays/pauses the simulation                                           |
-| R            | always         | Enables the real-time mode                                            |
-| Left arrow   | always         | Speeds the simulation down (more calls to the graphics)               |
-| Right arrow  | always         | Speeds the simulation up (less calls to the graphics)                 |
-| S            | always         | Enters / exits the select mode (nodes can be selected with the mouse) |
-| O            | in select mode | Selected nodes can be moved by drag and drop                          |
-| E            | in select mode | Enters edit mode (to manually change node contents)    
