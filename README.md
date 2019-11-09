@@ -39,14 +39,16 @@ tasks.register<JavaExec>("runAlchemist") {
 }
 ```
 [Gradle](https://gradle.org) has a special task to run a Java class from the build script: `JavaExec`. We can create our custom task of type `JavaExec` and configure it to launch our simulation. In order to make it work, we need to do two more things:
-- specify the main class, which is `it.unibo.alchemist.Alchemist`
+- specify the Alchemist main class, which is `it.unibo.alchemist.Alchemist`
 - explicit the classpath, or java won't be able to find all the classes needed
 
-This is what we do with the first two lines of code and it is sufficient to successfully start Alchemist. However, we don't want just to start Alchemist, we actually want it to run our simulation. Alchemist simulations are contained in *.yml files, more information about how to write such simulations can be found [here](https://alchemistsimulator.github.io/wiki/usage/yaml/). So, to launch our simulation we need to run Alchemist with proper parameters, to run a simulation we can rely on the `-y` option followed by the path to the YAML file. For further information about the supported options see the [command line interface](#command-line-interface). Let's suppose the `$simulation` variable contains the name of our simulation file, which is located in the `src/main/yaml/` folder, what we want to do is to run Alchemist with the following options:
+This is what we do in the first two lines of code, and it is sufficient to successfully start Alchemist. Now, to make it run our simulation we need to launch the simulator with proper parameters. To run a simulation we can rely on the `-y` option followed by the path to the simulation file. For further information about the supported options see the [command line interface](#command-line-interface). Alchemist simulations are contained in *.yml files, more information about how to write such simulations can be found [here](https://alchemistsimulator.github.io/wiki/usage/yaml/). Let's suppose the `$simulation` variable contains the name of our simulation file, which is located in the `src/main/yaml/` folder, what we want to do is to run Alchemist with the following options:
 ```bash
 -y src/main/yaml/$simulation.yml
 ```
-The third line of code does exactly this. Ok, that's it. You should be able to use Alchemist via Gradle in your own project now.
+The third line of code does exactly this. 
+
+Ok, that's it. You should be able to use Alchemist via Gradle in your own project now, or at least have a clue.
 
 ## Command line interface
 
