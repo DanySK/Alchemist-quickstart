@@ -25,13 +25,13 @@ Note that the first launch will be rather slow, since Gradle will download all t
 
 ## The build script
 
-Let's explain how everything works by looking at the `build.gradle` script. First of all, we need to set Alchemist as a dependency, thus you will see something like this:
+Let's explain how things work by looking at the `build.gradle` script. First of all, we need to add Alchemist as a dependency, thus you will see something like this:
 ```kotlin
 dependencies {
     implementation("it.unibo.alchemist:alchemist:SOME_ALCHEMIST_VERSION")
 }
 ```
-Nothing special actually. 
+With `SOME_ALCHEMIST_VERSION` replaced by the version used, nothing special actually. 
 
 Now, let's look at the `runAlchemist` task, it is a simple gradle task responsible for launching the simulation. Let's dissect it:
 ```kotlin
@@ -41,15 +41,15 @@ tasks.register<JavaExec>("runAlchemist") {
     args = listOf("-y", "src/main/yaml/$simulation.yml")
 }
 ```
-[Gradle](https://gradle.org) has a special task to run a Java class from the build script: `JavaExec`. We can create our custom task of type `JavaExec` and configure it to launch our simulation. In order to make it work, we need to do two more things:
-- specify the Alchemist main class, which is `it.unibo.alchemist.Alchemist`
-- explicit the classpath, or java won't be able to find all the classes needed
+[Gradle](https://gradle.org) has a special task to run a Java class from the build script: `JavaExec`. We can create our custom task of type `JavaExec`, name it `runAlchemist` and configure it to launch our simulation. In order to make it work, we need to explicit two things:
+- the Alchemist main class, which is `it.unibo.alchemist.Alchemist`
+- the classpath, or java won't be able to find all the classes needed
 
-This is what we do in the first two lines of code, and it is sufficient to successfully start Alchemist. Now, to make it run our simulation we need to launch the simulator with proper arguments. To run a simulation we can rely on the `-y` option followed by the path to the simulation file. For further information about the supported options see the [command line interface](#command-line-interface). Alchemist simulations are contained in *.yml files, more information about how to write such simulations can be found [here](https://alchemistsimulator.github.io/wiki/usage/yaml/). Let's suppose the `$simulation` variable contains the name of our simulation file, which is located in the `src/main/yaml/` folder, what we want to do is to run Alchemist with the following arguments:
+This is what we do with the first three lines of code, and it is sufficient to successfully start Alchemist. Now, to make it run our simulation we can rely on the [command line interface](#command-line-interface), to run a simulation we can use the `-y` option followed by the path to the simulation file. Alchemist simulations are contained in *.yml files, more information about how to write such simulations can be found [here](https://alchemistsimulator.github.io/wiki/usage/yaml/). Let's suppose the `$simulation` variable contains the name of our simulation file, which is located in the `src/main/yaml/` folder, what we want to do is to run Alchemist with the following arguments:
 ```bash
 -y src/main/yaml/$simulation.yml
 ```
-The third line of code does exactly this. 
+The last line of code specify these arguments.
 
 Ok, that's it. You should be able to use Alchemist via Gradle in your own project now, or at least have a clue.
 
