@@ -18,7 +18,10 @@ On Windows:
 ```
 gradlew.bat runAlchemist
 ```
+
 Press P and you will see some pedestrians wandering around. For further information about the gui, see the [graphical interface shortcuts](https://alchemistsimulator.github.io/wiki/usage/gui/).
+
+Note that the first launch will be rather slow, since Gradle will download all the required files. They will get cached in the user's home folder (as per Gradle normal behavior).
 
 ## The build script
 
